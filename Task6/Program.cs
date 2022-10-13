@@ -3,3 +3,14 @@
 // 4 -> да
 // -3 -> нет
 // 7 -> нет
+
+Console.Write("Введите число: " );
+int a = int.Parse(Console.ReadLine());
+if (a%2 == 0)
+{
+    Console.WriteLine("Введено четное число");
+}
+else
+{
+    Console.WriteLine("Введено нечетное число");
+}
