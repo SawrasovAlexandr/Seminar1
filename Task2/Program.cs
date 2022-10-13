@@ -4,22 +4,30 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
+//ЗАМЕТКА!! Пример вывода не соответствует условию задачи, а по сему 
+//          буду делать в соответствии с ТЗ, т.е. именно с условием))
+
 Console.Write("Введите a: ");
 var A = Console.ReadLine();
 Console.Write("Введите b: ");
 var B = Console.ReadLine();
 if (int.TryParse(A, out int a) && int.TryParse(B, out int b))
 {
-    int max = 0;
-    if (a > b)
+    if (a == b)
     {
-        max = a;
+        Console.WriteLine("Введенные числа равны");
     }
     else
     {
-        max = b;
+        if (a > b)
+        {
+            Console.WriteLine("a - большее число, b - меньшее число");
+        }
+        else
+        {
+            Console.WriteLine("b - большее число, a - меньшее число");
+        }
     }
-    Console.WriteLine("a = " + a + "; b = " + b + " -> max = " + max);
 }
 else
 {
