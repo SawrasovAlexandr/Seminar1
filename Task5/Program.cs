@@ -4,22 +4,29 @@
 // 2 -> " -2, -1, 0, 1, 2"
 
 Console.Write("Введите N: ");
-int N = Convert.ToInt32(Console.ReadLine());
-if (N >= 0)
+string? n = Console.ReadLine();
+if (int.TryParse(n, out int N))
 {
-    Console.Write("Целые числа от -N до N:");
-    for (int i = -1 * N; i < N; i++)
+    if (N >= 0)
     {
-        Console.Write(" " + i + ",");
+        Console.Write("Целые числа от -N до N:");
+        for (int i = -1 * N; i < N; i++)
+        {
+            Console.Write(" " + i + ",");
+        }
+        Console.Write(" " + N);
     }
-    Console.Write(" " + N);
+    else
+    {
+        Console.Write("Целые числа от N до -N:");
+        for (int i = N; i < -1 * N; i++)
+        {
+            Console.Write(" " + i + ",");
+        }
+        Console.Write(" " + -1 * N);
+    }
 }
 else
 {
-    Console.Write("Целые числа от N до -N:");
-    for (int i = N; i < -1 * N; i++)
-    {
-        Console.Write(" " + i + ",");
-    }
-    Console.Write(" " + -1 * N);
+    Console.WriteLine("Ошибка! Ввведите число: ");
 }
